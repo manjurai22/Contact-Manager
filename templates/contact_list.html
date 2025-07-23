@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for contact in contacts %}
+    
+      <div class="col">
+       <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ contact.name }}</h5>
+          <a href="{% url 'edit-contact' contact.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'delete-contact' contact.id %}" class="btn btn-danger">Delete</a>
+        </div>
+       </div>
+      </div>
+    {% endfor %}
+     
+    <div class="col">
+       <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ contact.name }}</h5>
+          <a href="{% url 'add-contact' %}" class="btn btn-success">Add</a>
+        </div>
+       </div>
+    </div>
+ </div>
+{% endblock content %}
