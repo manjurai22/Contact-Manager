@@ -8,8 +8,8 @@
        <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">{{ contact.name }}</h5>
-          <a href="{% url 'edit-contact' contact.id %}" class="btn btn-primary">Edit</a>
-          <a href="{% url 'delete-contact' contact.id %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'edit-contact' contact.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'delete-contact' contact.pk %}" class="btn btn-danger">Delete</a>
         </div>
        </div>
       </div>
