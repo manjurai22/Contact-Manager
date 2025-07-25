@@ -2,7 +2,7 @@
 # 📇 Django Contact Manager Project
 
 This is a simple Contact Manager web application built using Django. It lets users create, view, update, and delete contact entries.  
-The app is perfect for individuals or small businesses looking to organize and manage their contact list efficiently.
+
 
 ---
 
