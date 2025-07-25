@@ -1,41 +1,33 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<div class="container mt-4">
-  <h3 class="mb-4">Contact List</h3>
-  <ul class="list-group">
+<div class="container ">
+  <div class="list-group">
 
     {% for contact in contacts %}
-    <li class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="list-group-item d-flex justify-content-between align-items-center">
       
-      <!-- Contact Info -->
       <div class="d-flex align-items-center">
-        <img src="https://via.placeholder.com/50x50.png?text=👤" alt="Profile" class="rounded-circle me-3" width="50" height="50">
+        <img src="{% static 'img/profile.jpg' %}" alt="Profile" class="rounded-circle me-3" width="50" height="50">
         <div>
-          <h6 class="mb-0">{{ contact.name }}</h6>
-          {% if contact.email %}
-            <small class="text-muted">{{ contact.email }}</small><br>
-          {% endif %}
-          {% if contact.phone %}
-            <small class="text-muted">{{ contact.phone }}</small>
-          {% endif %}
+          <h6 class="card-title">{{ contact.name }}</h6>
+            <small class="card-text">{{ contact.email }}</small><br>
+            <small class="card-text">{{ contact.phone }}</small>
         </div>
       </div>
 
-      <!-- Actions -->
       <div class="d-flex">
-        <a href="{% url 'edit-contact' contact.pk %}" class="btn btn-outline-primary btn-sm me-2">Edit</a>
-        <a href="{% url 'delete-contact' contact.pk %}" class="btn btn-outline-danger btn-sm">Delete</a>
+        <a href="{% url 'edit-contact' contact.pk %}" class="btn btn-success me-3">Edit  </a>
+        <a href="{% url 'delete-contact' contact.pk %}" class="btn btn-danger">Delete </a>
       </div>
 
-    </li>
+    </div>
     {% endfor %}
 
-    <!-- Add New Contact Button -->
-    <li class="list-group-item text-center">
-      <a href="{% url 'add-contact' %}" class="btn btn-success">+ Add New Contact</a>
-    </li>
+    <div class="list-group-item text-center">
+      <a href="{% url 'add-contact' %}" class="btn btn-primary"> Add New Contact</a>
+    </div>
 
-  </ul>
+  </div>
 </div>
 {% endblock content %}

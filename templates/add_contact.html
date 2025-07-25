@@ -1,38 +1,9 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow">
-        <div class="card-body">
-          <h4 class="card-title mb-4 text-center">Add New Contact</h4>
-
-          <form action="" method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" inputmode="numeric" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
-            </div>
-
-            <div class="d-grid">
-              <button type="submit" class="btn btn-success">Save Contact</button>
-            </div>
-          </form>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<form action="" method="post" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
 {% endblock content %}

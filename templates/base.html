@@ -1,24 +1,30 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Contact Manager</title>
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="{% static 'img/' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-          Contact List
-        </a>
-      </div>
-    </nav>
-        {% block content %}
-        {% endblock content %}
+      
+      <nav class="navbar bg-body-tertiary mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="{% static 'img/contact.jpg ' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Contact List
+          </a>
+        </div>
+      </nav>
+
+      {% block content %}
+      {% endblock content %}
+
     </div>
+
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
