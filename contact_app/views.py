@@ -27,15 +27,6 @@ def add_contact(request):
             contact.save()
             return redirect("contact-list")
     
-# def edit_contact(request,pk):
-#     if request.method=="GET":
-#         contact=Contact.objects.get(pk=pk)
-#         return render(request,'edit_contact.html',{"contact":contact},)
-#     else:
-#         contact=Contact.objects.get(pk=pk)
-#         contact.contact=request.POST["name"]
-#         contact.save()
-#         return redirect('contact-list')
 
 def edit_contact(request, pk):
     contact = Contact.objects.get(pk=pk)
